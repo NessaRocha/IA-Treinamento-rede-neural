@@ -1,35 +1,23 @@
 class Entrada {
-	valorEntrada = 0;
-	peso = 0;
+	valorEntrada1 = 0;
+	valorEntrada2 = 0;
+	valorEntrada3 = 0;
+	peso1 = 0;
+	peso2 = 0;
+	peso3 = 0;
 }
 
 const entradas_pesos = [
-	{ entrada: -1, peso: 0 },
-	{ entrada: 1, peso: -1 },
-	{ entrada: 1, peso: 2 },
+	{ entrada1: 0, entrada2: 0, entrada3: 0, peso1: 0, peso2: 0, peso3: 0 },
+	{ entrada1: 0, entrada2: 0, entrada3: 1, peso1: -1, peso2: -1, peso3: 2 },
+	{ entrada1: 0, entrada2: 1, entrada3: 0, peso1: 2, peso2: 1, peso3: 2 },
 ];
 
-let p1 = -1,
-	p2 = -1,
-	p3 = -1;
 let soma,
-	ajustes = 0,
-	quantidadeAjustesTotais = 0,
-	repeticoes = 0;
-// Novo treinamento
-const treinamento = [
-	[0, 0, 0, 1], // laranja - citrico
-	[0, 0, 1, 0], // abacaxi - citrico
-	[0, 1, 0, 0], // morango - citrico
-	[0, 1, 1, 0], // kiwi - citrico
-	[1, 0, 0, 1], // mamão - doce
-	[1, 0, 1, 1], // pera - doce
-	[1, 1, 0, 1], // melao - doce
-	[1, 1, 1, 1], // mertilo - doce
-];
+	ajustes = 0;
 
 //Escolha a função qu vamos utilizar para calcular (LR, FR, FS)
-let funcaoEscolhida = "FS";
+let funcaoEscolhida = "FR";
 
 let y;
 
@@ -52,10 +40,14 @@ switch (funcaoEscolhida) {
 }
 
 function soma(entradas_pesos) {
-	var soma = 0;
+	let soma = 0;
 	for (let i = 0; i < entradas_pesos.length; i++) {
-		soma = soma + entradas_pesos[i].entrada * entradas_pesos[i].peso;
+		soma +=
+			entradas_pesos[i].entrada1 * entradas_pesos[i].peso1 +
+			entradas_pesos[i].entrada2 * entradas_pesos[i].peso2 +
+			entradas_pesos[i].entrada3 * entradas_pesos[i].peso3;
 	}
+
 	console.log("Soma: " + soma);
 	return soma;
 }
