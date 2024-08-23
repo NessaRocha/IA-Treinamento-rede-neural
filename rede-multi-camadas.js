@@ -43,7 +43,7 @@ function soma(entradas_pesos) {
 	let soma = 0;
 	for (let i = 0; i < entradas_pesos.length; i++) {
 		soma +=
-			entradas_pesos[i].entrada1 * entradas_pesos[i].peso1 +
+			ntradas_pesos[i].entrada1 * entradas_pesos[i].peso1 +
 			entradas_pesos[i].entrada2 * entradas_pesos[i].peso2 +
 			entradas_pesos[i].entrada3 * entradas_pesos[i].peso3;
 	}
