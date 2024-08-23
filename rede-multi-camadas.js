@@ -1,22 +1,12 @@
-class Entrada {
-	valorEntrada1 = 0;
-	valorEntrada2 = 0;
-	valorEntrada3 = 0;
-	peso1 = 0;
-	peso2 = 0;
-	peso3 = 0;
-}
-
 const entradas_pesos = [
 	{ entrada1: 0, entrada2: 0, entrada3: 0, peso1: 0, peso2: 0, peso3: 0 },
 	{ entrada1: 0, entrada2: 0, entrada3: 1, peso1: -1, peso2: -1, peso3: 2 },
 	{ entrada1: 0, entrada2: 1, entrada3: 0, peso1: 2, peso2: 1, peso3: 2 },
 ];
 
-let soma,
-	ajustes = 0;
+let ajustes = 0;
 
-//Escolha a função qu vamos utilizar para calcular (LR, FR, FS)
+// Escolha a função que vamos utilizar para calcular (LR, FR, FS)
 let funcaoEscolhida = "FR";
 
 let y;
@@ -35,15 +25,15 @@ switch (funcaoEscolhida) {
 		console.log("Saída: " + y + ", Função utilizada: " + funcaoEscolhida);
 		break;
 	default:
-		console.log(" A lternativa não é valida");
+		console.log("A alternativa não é válida");
 		break;
 }
 
 function soma(entradas_pesos) {
-	let soma = 0;
+	let soma = 0; // Inicializando a variável soma
 	for (let i = 0; i < entradas_pesos.length; i++) {
 		soma +=
-			ntradas_pesos[i].entrada1 * entradas_pesos[i].peso1 +
+			entradas_pesos[i].entrada1 * entradas_pesos[i].peso1 +
 			entradas_pesos[i].entrada2 * entradas_pesos[i].peso2 +
 			entradas_pesos[i].entrada3 * entradas_pesos[i].peso3;
 	}
